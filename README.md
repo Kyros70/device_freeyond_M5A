@@ -42,7 +42,7 @@ m -j$(nproc)
 - **VINTF:** Requires vendor compatibility matrix; CONFIG_SYSVIPC must be unset in kernel
 
 ## Credits
-- [cooked71](https://github.com/cooked71) — RE58C2 device tree and TWRP recovery
+- [cooked71](https://github.com/cooked71) — RE58C2 device tree
 - Unisoc/Sprd community — kernel and hardware enablement
 - LineageOS project
 
