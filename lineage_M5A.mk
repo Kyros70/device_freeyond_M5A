@@ -45,8 +45,8 @@
     PRODUCT_DEVICE := M5A
     PRODUCT_NAME := lineage_M5A
     PRODUCT_BRAND := FreeYond
-    PRODUCT_MODEL := M5A  # Changed from ums9230_hulk_Natv to M5A for consistency
-    PRODUCT_MANUFACTURER := FreeYond
+    PRODUCT_MODEL := 2305003M
+    PRODUCT_MANUFACTURER := Chinoe
 
     # HARDWARE PLATFORM (DEFINE HERE ONLY - REMOVE FROM device.mk)
     TARGET_BOARD_PLATFORM := ums9230
@@ -57,7 +57,6 @@
 
     # BUILD FINGERPRINT (CRITICAL FOR BOOT - MUST MATCH EXACTLY)
     PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRIVATE_BUILD_DESC="TODO from M5A ro.build.description"
+        PRIVATE_BUILD_DESC="M5A_EEA-user 13 TP1A.220624.014 24443 release-keys"
 
-    # TODO: set from M5A: getprop ro.build.fingerprint
-    #BUILD_FINGERPRINT :=
+    BUILD_FINGERPRINT := FreeYond/M5A_EEA/M5A:13/TP1A.220624.014/24443:user/release-keys

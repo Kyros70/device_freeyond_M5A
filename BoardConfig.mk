@@ -234,3 +234,5 @@ TARGET_VENDOR_DLKM_PROP += $(DEVICE_PATH)/vendor_dlkm.prop
 
 # Vendor blobs
 -include vendor/freeyond/M5A/BoardConfigVendor.mk
+
+VENDOR_SECURITY_PATCH := 2023-06-05
