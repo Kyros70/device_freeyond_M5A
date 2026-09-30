@@ -1,0 +1,10 @@
+<manifest version="5.0" type="framework">
+        <system-sdk>
+        <version>28</version>
+        <version>29</version>
+        <version>30</version>
+        <version>31</version>
+        <version>32</version>
+        <version>33</version>
+    </system-sdk>
+</manifest>

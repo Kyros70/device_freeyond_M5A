@@ -1,0 +1,24 @@
+# MINIMAL file contexts - only for our unique HAL services
+
+# KeyMint HAL (Unisoc specific)
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@2\.0-unisoc\.service\.trusty u:object_r:hal_keymint_unisoc_exec:s0
+
+# Boot Control HAL (SPRD specific)
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.boot@1\.2-service u:object_r:hal_bootctrl_sprd_exec:s0
+
+
+# GNSS HAL
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.gnss@2\.2-service u:object_r:hal_gnss_sprd_exec:s0
+
+# Bluetooth HAL
+/(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.1-service\.unisoc u:object_r:hal_bluetooth_sprd_exec:s0
+
+# Camera HAL
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.camera\.provider@2\.4-service u:object_r:hal_camera_sprd_exec:s0
+
+# Thermal HAL
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.thermal@2\.0-service u:object_r:hal_thermal_sprd_exec:s0
+
+# Audio HAL
+#/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.audio@4\.0-service u:object_r:hal_audio_sprd_exec:s0
+

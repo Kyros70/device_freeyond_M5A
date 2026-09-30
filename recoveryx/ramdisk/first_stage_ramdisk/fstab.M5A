@@ -1,0 +1,27 @@
+# fstab for LineageOS 20
+# Adapted from stock
+# Dynamic partitions, first_stage_mount enabled
+
+# system partition
+system /system erofs ro wait,logical,first_stage_mount,slotselect,avb=vbmeta_system
+
+# system_ext partition
+system_ext /system_ext erofs ro wait,logical,first_stage_mount,slotselect,avb=vbmeta_system
+
+# product partition
+product /product erofs ro wait,logical,first_stage_mount,slotselect,avb=vbmeta_product
+
+# vendor partition
+vendor /vendor erofs ro wait,logical,first_stage_mount,slotselect,avb=vbmeta_vendor
+
+# odm partition
+odm /odm erofs ro wait,logical,first_stage_mount,slotselect,avb=vbmeta_odm
+
+# vendor_dlkm partition
+vendor_dlkm /vendor_dlkm erofs ro wait,logical,first_stage_mount,slotselect,avb=vbmeta_vendor_dlkm
+
+# metadata partition
+/dev/block/by-name/metadata /metadata f2fs noatime,nosuid,nodev,formattable,check,first_stage_mount,wait
+
+# userdata partition (optional, if needed)
+#/dev/block/by-name/userdata /data f2fs noatime,nosuid,nodev,discard,latency_top wait,check,quota,formattable,resize,encryptable=footer

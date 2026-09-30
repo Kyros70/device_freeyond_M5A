@@ -1,0 +1,10 @@
+on boot
+    # Start brightness fix service
+    start sprd_brightness_fix
+
+service sprd_brightness_fix /vendor/bin/sprd_brightness_fix
+    class main
+    user root
+    group root
+    oneshot
+    disabled

@@ -1,0 +1,94 @@
+# MINIMAL file contexts - only for our unique HAL services
+
+# KeyMint HAL (Unisoc specific)
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@2\.0-unisoc\.service\.trusty u:object_r:hal_keymint_unisoc_exec:s0
+
+# Boot Control HAL (SPRD specific)
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.boot@1\.2-service u:object_r:hal_bootctrl_sprd_exec:s0
+
+# GNSS HAL
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.gnss@2\.2-service u:object_r:hal_gnss_sprd_exec:s0
+
+# Bluetooth HAL
+/(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.1-service\.unisoc u:object_r:hal_bluetooth_sprd_exec:s0
+
+# Camera HAL
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.camera\.provider@2\.4-service u:object_r:hal_camera_sprd_exec:s0
+
+# Thermal HAL
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.thermal@2\.0-service u:object_r:hal_thermal_sprd_exec:s0
+
+# Broadcast Radio HAL
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.broadcastradio@2\.0-service u:object_r:hal_broadcastradio_sprd_exec:s0
+
+# Face Biometrics HAL
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.biometrics\.face-service u:object_r:hal_face_sprd_exec:s0
+
+# Engineer service
+/(vendor|system/vendor)/bin/hw/vendor\.oppo\.engnative\.engineer@1\.0-service u:object_r:hal_engineer_sprd_exec:s0
+
+# urild service
+/(vendor|system/vendor)/bin/hw/urild u:object_r:urild_sprd_exec:s0
+
+# Spreadtrum WiFi services
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.wcn@1\.0-service u:object_r:hal_wifi_sprd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.connmgr@1\.0-service u:object_r:hal_wifi_sprd_exec:s0
+/(vendor|system/vendor)/bin/connmgr u:object_r:hal_wifi_sprd_exec:s0
+/(vendor|system/vendor)/bin/wcn_chr u:object_r:hal_wifi_sprd_exec:s0
+/(vendor|system/vendor)/bin/iwnpi u:object_r:hal_wifi_sprd_exec:s0
+/(vendor|system/vendor)/bin/modem_control u:object_r:hal_wifi_sprd_exec:s0
+
+# DRM/Widevine HAL
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm-service\.widevine u:object_r:hal_drm_widevine_exec:s0
+
+# Gatekeeper HAL  
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.trusty u:object_r:hal_gatekeeper_sprd_exec:s0
+
+# Media C2 HAL
+/(vendor|system/vendor)/bin/hw/android\.hardware\.media\.c2@1\.1-unisoc-service u:object_r:hal_media_c2_sprd_exec:s0
+
+# SPRD-specific services
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.cplog_svc-service u:object_r:hal_cplog_sprd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.enhance-service u:object_r:hal_enhance_sprd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.hdcp-service u:object_r:hal_hdcp_sprd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.lights-service u:object_r:hal_lights_sprd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.memtrack-service u:object_r:hal_memtrack_sprd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.network-service u:object_r:hal_network_sprd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.trusty-service u:object_r:hal_trusty_sprd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.oemlock-service u:object_r:hal_oemlock_sprd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.unisoc\.hardware\.power-service u:object_r:hal_power_sprd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.log-service u:object_r:hal_log_sprd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.commondcs@1\.0-service u:object_r:hal_commondcs_sprd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.network@1\.0-service u:object_r:hal_network_v1_sprd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.performance@1\.0-service u:object_r:hal_performance_sprd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.sprd\.hardware\.vibrator-service u:object_r:hal_vibrator_sprd_exec:s0
+
+# Vendor binaries
+/(vendor|system/vendor)/bin/dcxsrv u:object_r:dcxsrv_sprd_exec:s0
+/(vendor|system/vendor)/bin/engpc u:object_r:engpc_sprd_exec:s0
+/(vendor|system/vendor)/bin/gpsd u:object_r:gpsd_sprd_exec:s0
+/(vendor|system/vendor)/bin/tsupplicant u:object_r:tsupplicant_sprd_exec:s0
+/(vendor|system/vendor)/bin/charged u:object_r:charged_sprd_exec:s0
+/(vendor|system/vendor)/bin/uniber u:object_r:uniber_sprd_exec:s0
+/(vendor|system/vendor)/bin/phasecheckserver u:object_r:phasecheckserver_sprd_exec:s0
+/(vendor|system/vendor)/bin/refnotify u:object_r:refnotify_sprd_exec:s0
+/(vendor|system/vendor)/bin/slogmodem_vendor u:object_r:slogmodem_sprd_exec:s0
+/(vendor|system/vendor)/bin/srtd u:object_r:srtd_sprd_exec:s0
+/(vendor|system/vendor)/bin/thermald u:object_r:thermald_sprd_exec:s0
+/(vendor|system/vendor)/bin/systemDebuggerd u:object_r:systemdebuggerd_sprd_exec:s0
+/(vendor|system/vendor)/bin/cp_diskserver u:object_r:cp_diskserver_sprd_exec:s0
+
+# Scripts and utilities
+/(vendor|system/vendor)/bin/idlefast\.sh u:object_r:idlefast_exec:s0
+/(vendor|system/vendor)/bin/mmc_ffu u:object_r:mmc_ffu_exec:s0
+/(vendor|system/vendor)/bin/zramwb\.sh u:object_r:zramwb_exec:s0
+
+# WiFi and Ethernet services
+# /(vendor|system/vendor)/bin/hw/android\.hardware\.wifi@1\.0-service u:object_r:hal_wifi_service_exec:s0
+# /(vendor|system/vendor)/bin/hw/android\.hardware\.wifi\.supplicant-service u:object_r:hal_supplicant_exec:s0
+# /(vendor|system/vendor)/bin/hw/android\.hardware\.wifi\.hostapd-service u:object_r:hal_hostapd_exec:s0
+# /(vendor|system/vendor)/bin/hw/android\.hardware\.ethernet@1\.0-service u:object_r:hal_ethernet_exec:s0
+
+# Init scripts
+/(vendor|system/vendor)/bin/init\.insmod\.sh u:object_r:init_insmod_exec:s0
+/(vendor|system/vendor)/bin/create_splloader_dual_slot_byname_path\.sh u:object_r:create_splloader_exec:s0

@@ -1,0 +1,11 @@
+cc_binary {
+    name: "sprd_brightness_fix",
+    srcs: ["sprd_brightness_fix.c"],
+    init_rc: ["init.sprd_brightness.rc"],
+    vendor: true,
+    compile_multilib: "first",
+    shared_libs: [
+        "libcutils",
+        "liblog",
+    ],
+}

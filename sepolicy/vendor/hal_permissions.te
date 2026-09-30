@@ -1,0 +1,53 @@
+# MINIMAL permissions for our HAL services
+
+# Basic file access
+allow { 
+    hal_keymint_unisoc hal_bootctrl_sprd hal_wifi_sprd hal_gnss_sprd
+    hal_bluetooth_sprd hal_camera_sprd hal_thermal_sprd hal_broadcastradio_sprd
+    hal_face_sprd hal_engineer_sprd urild_sprd hal_graphics_sprd
+    hal_drm_widevine hal_gatekeeper_sprd hal_media_c2_sprd
+} self:process execmem;
+
+# Binder communication
+allow {
+    hal_keymint_unisoc hal_bootctrl_sprd hal_wifi_sprd hal_gnss_sprd
+    hal_bluetooth_sprd hal_camera_sprd hal_thermal_sprd hal_broadcastradio_sprd
+    hal_face_sprd hal_engineer_sprd urild_sprd hal_graphics_sprd
+    hal_drm_widevine hal_gatekeeper_sprd hal_media_c2_sprd
+} servicemanager:binder { call transfer };
+
+allow {
+    hal_keymint_unisoc hal_bootctrl_sprd hal_wifi_sprd hal_gnss_sprd
+    hal_bluetooth_sprd hal_camera_sprd hal_thermal_sprd hal_broadcastradio_sprd
+    hal_face_sprd hal_engineer_sprd urild_sprd hal_graphics_sprd
+    hal_drm_widevine hal_gatekeeper_sprd hal_media_c2_sprd
+} hwservicemanager:binder { call transfer };
+
+# Specific permissions
+allow hal_keymint_unisoc tee_device:chr_file { read write open };
+allow hal_bootctrl_sprd system_prop:property_service set;
+
+# Additional boot control permissions
+allow hal_bootctrl_sprd sysfs:file { read open getattr };
+allow hal_bootctrl_sprd block_device:blk_file { read write open getattr };
+
+# KeyMint missing permissions
+allow hal_keymint_unisoc device:chr_file { read write open ioctl };
+allow keystore hal_keymint_unisoc:binder { call };
+
+# BASIC WiFi permissions
+allow hal_wifi_sprd device:chr_file { read write open ioctl };
+allow hal_wifi_sprd sysfs:dir search;
+allow hal_wifi_sprd sysfs:file { read write open getattr };
+
+# Fix netlink permissions for WiFi
+allow hal_wifi_sprd self:netlink_kobject_uevent_socket { create read write };
+
+# Basic permissions for init scripts
+allow init_insmod self:process execmem;
+allow init_insmod vendor_file:file { read getattr open execute };
+allow init_insmod system_file:file { read getattr open };
+
+allow create_splloader self:process execmem;
+allow create_splloader vendor_file:file { read getattr open execute };
+allow create_splloader system_file:file { read getattr open };

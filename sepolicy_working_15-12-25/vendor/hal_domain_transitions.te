@@ -1,0 +1,15 @@
+# MINIMAL HAL domain transitions - only truly unique device-specific types
+
+# KeyMint HAL (Unisoc specific) - this should be unique
+type hal_keymint_unisoc_exec, exec_type, vendor_file_type, file_type;
+type hal_keymint_unisoc, domain;
+init_daemon_domain(hal_keymint_unisoc)
+
+# Boot Control HAL (SPRD specific) - this should be unique  
+type hal_bootctrl_sprd_exec, exec_type, vendor_file_type, file_type;
+type hal_bootctrl_sprd, domain;
+init_daemon_domain(hal_bootctrl_sprd)
+
+
+# Basic permissions for our HAL domains
+allow { hal_keymint_unisoc hal_bootctrl_sprd } self:process execmem;

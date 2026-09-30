@@ -1,0 +1,27 @@
+# MINIMAL permissions for our HAL services
+
+# Basic file access
+allow { hal_keymint_unisoc hal_bootctrl_sprd } vendor_file:file { read getattr open };
+allow { hal_keymint_unisoc hal_bootctrl_sprd } system_file:file { read getattr open };
+
+# Binder communication
+allow { hal_keymint_unisoc hal_bootctrl_sprd } servicemanager:binder { call transfer };
+allow { hal_keymint_unisoc hal_bootctrl_sprd } hwservicemanager:binder { call transfer };
+
+# Specific permissions
+allow hal_keymint_unisoc tee_device:chr_file { read write open };
+allow hal_bootctrl_sprd system_prop:property_service set;
+
+# Boot control hwservice access
+
+# Additional boot control permissions
+allow hal_bootctrl_sprd sysfs:file { read open getattr };
+allow hal_bootctrl_sprd block_device:blk_file { read write open getattr };
+allow hal_bootctrl_sprd system_prop:property_service { set };
+
+# KeyMint missing permissions (from boot log denials)
+allow hal_keymint_unisoc device:chr_file { read write open ioctl };
+allow hal_keymint_unisoc vendor_security_patch_level_prop:file { read open getattr map };
+
+# Allow keystore to call KeyMint binder (from boot log denial)
+allow keystore hal_keymint_unisoc:binder { call };

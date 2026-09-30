@@ -1,0 +1,17 @@
+*.o
+*.a
+*.so
+*.mod.c
+*.ko
+.*.cmd
+*.order
+modules.builtin
+built-in.a
+out/
+prebuilts/kernel
+prebuilts/dtb.img
+prebuilts/dtbo.img
+vendor/freeyond/M5A/proprietary/
+.DS_Store
+*.swp
+*~
