@@ -8,7 +8,7 @@ Forked from [cooked71's RE58C2 (Realme C53)](https://github.com/cooked71/device_
 - **Storage:** 256GB
 - **Display:** 1612x720 IPS
 - **Bootloader:** Unisoc proprietary (U-Boot)
-- **Recovery:** TWRP (based on cooked71's tree)
+- **Recovery:** TWRP/OFRP By Kyros70
 - **Partitioning:** A/B with Virtual A/B
 
 ## Build Prerequisites
