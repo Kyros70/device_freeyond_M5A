@@ -55,8 +55,7 @@
     # GMS CONFIGURATION
     PRODUCT_GMS_CLIENTID_BASE := android-unisoc
 
-    # BUILD FINGERPRINT (CRITICAL FOR BOOT - MUST MATCH EXACTLY)
+    # Stock build identity (from M5A vendor props)
     PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRIVATE_BUILD_DESC="M5A_EEA-user 13 TP1A.220624.014 24443 release-keys"
-
-    BUILD_FINGERPRINT := FreeYond/M5A_EEA/M5A:13/TP1A.220624.014/24443:user/release-keys
+        BuildDesc="M5A_EEA-user 13 TP1A.220624.014 24443 release-keys" \
+        BuildFingerprint=FreeYond/M5A_EEA/M5A:13/TP1A.220624.014/24443:user/release-keys
