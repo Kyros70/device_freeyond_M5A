@@ -8,7 +8,6 @@
 modules.builtin
 built-in.a
 out/
-prebuilts/kernel
 vendor/freeyond/M5A/proprietary/
 .DS_Store
 *.swp
