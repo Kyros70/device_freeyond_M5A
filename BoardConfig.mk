@@ -55,13 +55,7 @@ AB_OTA_PARTITIONS += \
     product \
     vendor \
     odm \
-    vendor_dlkm \
-    vbmeta \
-    vbmeta_system \
-    vbmeta_vendor \
-    vbmeta_odm \
-    vbmeta_product \
-    vbmeta_system_ext
+    vendor_dlkm
 
 # Boot image
 BOARD_BOOT_HEADER_VERSION := 4
@@ -119,7 +113,7 @@ BOARD_GROUP_UNISOC_PARTITION_LIST := system system_ext product vendor odm vendor
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2147483648
 BOARD_SYSTEM_EXTIMAGE_PARTITION_SIZE := 671088640
 BOARD_PRODUCTIMAGE_PARTITION_SIZE := 1073741824
-BOARD_VENDORIMAGE_PARTITION_SIZE := 805306368
+BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824
 BOARD_ODMIMAGE_PARTITION_SIZE := 402653184
 BOARD_VENDOR_DLKMIMAGE_PARTITION_SIZE := 33554432
 
@@ -149,7 +143,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recoveryx/recovery/etc/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
 # AVB
-BOARD_AVB_ENABLE := true
+BOARD_AVB_ENABLE := false
 BOARD_AVB_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_ROLLBACK_INDEX := 0
@@ -236,3 +230,44 @@ TARGET_VENDOR_DLKM_PROP += $(DEVICE_PATH)/vendor_dlkm.prop
 -include vendor/freeyond/M5A/BoardConfigVendor.mk
 
 VENDOR_SECURITY_PATCH := 2023-06-05
+
+# VINTF (moved out of PRODUCT_COPY_FILES)
+ODM_MANIFEST_FILES += vendor/freeyond/M5A/proprietary/odm/etc/vintf/manifest.xml
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += vendor/freeyond/M5A/proprietary/product/etc/vintf/compatibility_matrix.xml
+DEVICE_MATRIX_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/ai_engine-default.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint@2.1-service.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/android.hardware.drm-service.clearkey.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/android.hardware.gatekeeper@1.0-service.trusty.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/android.hardware.health-service.example.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/android.hardware.security.keymint@2.0-unisoc.service.trusty.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/android.hardware.sensors-multihal.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/android.hardware.thermal@2.0-service.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/android.hardware.usb-service.example.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/bluetooth_audio.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/cplog_svc-default.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/enhance-default.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/face-default.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/hdcp-default.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/lights.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/manifest_android.hardware.drm-service.widevine.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/manifest_dualsim.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/manifest_media_c2_V1_1_unisoc.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/memtrack.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/network-default.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/power.stats-default.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/rebootescrow-default.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/soter_default.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/trusty-default.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/vendor-fingerprintmmi-default.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/vendor-log-default.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/vendor-oemlock-default.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/vendor-power-default.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/vendor.sprd.hardware.boot@1.2.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/vendor.sprd.hardware.gnss@2.2-service.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/vendor.sprd.hardware.thermal@2.0-service.xml
+DEVICE_MANIFEST_FILE += vendor/freeyond/M5A/proprietary/vendor/etc/vintf/manifest/vibrator.xml
