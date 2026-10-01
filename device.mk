@@ -221,6 +221,10 @@ PRODUCT_PROPERTY_OVERRIDES += ro.boot.selinux=permissive
 
 # Rootdir: init scripts, fstabs and scripts come from the stock vendor image (vendor_freeyond_M5A)
 
+# Live-verified fstab for ums9230_1h10 (no FBE on /data), replaces the stock one from the vendor repo
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/vendor/etc/fstab.ums9230_1h10:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.ums9230_1h10
+
 
 
 #$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
