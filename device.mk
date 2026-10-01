@@ -219,44 +219,7 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 PRODUCT_PROPERTY_OVERRIDES += ro.boot.selinux=permissive
 
 
-# Rootdir
-PRODUCT_PACKAGES += \
-    log_to_csv.sh \
-    loading.sh \
-    para.sh \
-    total.sh \
-    create_splloader_dual_slot_byname_path.sh \
-    engineer_vendor_shell.sh \
-    idlefast.sh \
-    init.insmod.sh \
-    zramwb.sh \
-
-PRODUCT_PACKAGES += \
-    fstab.ums9230_4h10 \
-    init.cali.rc \
-    init.module.rc \
-    init.module.usb.rc \
-    init.ram.gms.rc \
-    init.ram.native.rc \
-    init.ram.rc \
-    init.storage.rc \
-    init.ums9230_1h10.rc \
-    init.ums9230_1h10.usb.rc \
-    init.ums9230_1h10_go.rc \
-    init.ums9230_1h10_go.usb.rc \
-    init.ums9230_4h10.rc \
-    init.ums9230_4h10.usb.rc \
-    init.ums9230_4h10_go.rc \
-    init.ums9230_4h10_go.usb.rc \
-    init.ums9230_6h10.rc \
-    init.ums9230_6h10.usb.rc \
-    init.ums9230_7h10.rc \
-    init.ums9230_7h10.usb.rc \
-    init.ums9230_haps.rc \
-    init.ums9230_haps.usb.rc \
-    init.ums9230_zebu.rc \
-    init.ums9230_zebu.usb.rc \
-    init.zramwb.rc \
+# Rootdir: init scripts, fstabs and scripts come from the stock vendor image (vendor_freeyond_M5A)
 
 
 

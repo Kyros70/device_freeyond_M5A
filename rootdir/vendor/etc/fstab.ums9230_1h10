@@ -15,7 +15,5 @@ vendor_dlkm /vendor_dlkm erofs ro wait,avb=vbmeta_system_ext,logical,first_stage
 /dev/block/by-name/cache /cache f2fs noatime,nosuid,nodev,discard wait,check,formattable
 /dev/block/by-name/cache /cache ext4 noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc wait,check,formattable
 /dev/block/by-name/misc /misc emmc defaults defaults
-/dev/block/by-name/my_preload /my_preload ext4 noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc wait,check,nofail
 /dev/block/by-name/blackbox /blackbox ext4 noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc check
-/dev/block/by-name/opporeserve /mnt/vendor/opporeserve ext4 noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc wait,formattable,check
 /dev/block/by-name/blackbox /blackbox f2fs noatime,nosuid,nodev,discard check
