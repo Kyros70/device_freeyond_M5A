@@ -1,13 +1,4 @@
-*.o
-*.a
-*.mod.c
-*.ko
-.*.cmd
-*.order
-modules.builtin
-built-in.a
 out/
-vendor/freeyond/M5A/proprietary/
-.DS_Store
 *.swp
 *~
+.DS_Store

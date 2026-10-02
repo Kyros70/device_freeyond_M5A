@@ -99,3 +99,11 @@ Order of VINTF errors hit and fixed in the final stretch: CAS declared twice, th
 4. Apply lineage-soong-headers.patch inside vendor/lineage.
 5. Run `/work/build-only.sh` inside the container.
 
+
+## 13. Cleanup pass
+
+- Fixed `BOARD_KERNEL_CMDLINE`: the first line lacked the trailing `\`, so `androidboot.hardware=ums9230_1h10`, `androidboot.dtbo_idx=1`, `androidboot.selinux=permissive`, `loop.max_part=7`, `swiotlb=1` were parsed as a junk make variable and never reached the boot image.
+- Removed the inert `BOARD_AVB_*` chain (AVB is disabled).
+- Removed unreferenced C53 / other-SKU leftovers: rootdir init, bin and system dirs, `unisoc-ims` (disabled Android.bk), `vintf/`, `product/`, old sepolicy copies, unused `prebuilts/*modules*`, `recoveryx/ramdisk/system/{bin,etc}` and `system_old`, RMX3624/hulk/nico ueventd and fstab files, `avb_keys/`, the aospdtgen extract/setup scripts, `proprietary-files.txt` and `releasetools.py`.
+- Kept: `rootdir/vendor/etc/fstab.ums9230_1h10` (installed via device.mk) and `fstab.M5A`.
+- `.gitignore` reduced to `out/`, editor files.

@@ -6,8 +6,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-$(info TARGET_DEVICE=$(TARGET_DEVICE))
-
 ifeq ($(TARGET_DEVICE),M5A)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
